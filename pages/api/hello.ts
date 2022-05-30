@@ -1,13 +1,19 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { OutgoingHttpHeaders } from "http2";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  name: string
-}
+  name: string;
+  res_headers: OutgoingHttpHeaders;
+};
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  // throw new Error("Error from API route");
+
+  res.status(200).json({
+    name: "John Doe",
+    res_headers: res.getHeaders(),
+  });
 }

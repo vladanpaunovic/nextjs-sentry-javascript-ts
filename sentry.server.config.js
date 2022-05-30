@@ -13,7 +13,7 @@ Sentry.init({
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1.0,
   beforeSend(event) {
-    console.log(event.exception.values);
+    console.log(event?.exception?.values);
     return event;
   },
   // ...

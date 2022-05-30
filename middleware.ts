@@ -1,4 +1,4 @@
-import { captureMessage } from "@sentry/nextjs";
+// import { captureMessage } from "@sentry/nextjs";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(req: NextRequest, res: NextResponse) {
@@ -10,7 +10,7 @@ export async function middleware(req: NextRequest, res: NextResponse) {
   }
 
   console.log("Hello from the middleware");
-  captureMessage("Hello from the middleware");
+  // captureMessage("Hello from the middleware");
 
   // Set custom header
   response.headers.set("x-hello-from", "middleware");
